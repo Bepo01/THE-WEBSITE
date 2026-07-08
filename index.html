@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>avishkar01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- ===================== LOADER ===================== -->
+<div id="loader">
+  <div class="shatter-grid" id="shatterGrid"></div>
+  <div class="loader-corner">avishkar01 — personal space</div>
+  <div class="loader-name">
+    AVISHKAR
+    <span class="loader-name-fill">AVISHKAR</span>
+  </div>
+  <div class="loader-line"></div>
+  <div class="loader-sub">loading experience</div>
+  <div class="loader-counter" id="loaderCounter">000</div>
+</div>
+
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== POPUP OVERLAY ===================== -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-window" id="popupWindow">
+    <div class="popup-titlebar">
+      <div class="titlebar-dots">
+        <div class="dot dot-red" id="popupClose"></div>
+        <div class="dot dot-yellow"></div>
+        <div class="dot dot-green"></div>
+      </div>
+      <div class="titlebar-title" id="popupTitle">window</div>
+      <div class="titlebar-spacer"></div>
+    </div>
+    <div class="popup-body" id="popupBody"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">avishkar01</div>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#interests">interests</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb"></div>
+  <p class="hero-eyebrow">— personal space</p>
+  <h1 class="hero-name">
+    Avishkar
+    <span>Dhakal</span>
+  </h1>
+  <div class="hero-sub">
+    <p class="hero-desc">
+      Builder. Creator. Explorer.<br>
+      Somewhere between the screen and the shutter,<br>
+      between a line of code and a brushstroke.
+    </p>
+    <div class="hero-status">
+      <div><span class="status-dot"></span>Available</div>
+      <div class="location-timeline">
+        <div class="loc-item">
+          <span class="loc-flag">🇳🇵</span>
+          <span class="loc-dash"></span>
+          <span>NP · 2007 – 2026</span>
+        </div>
+        <div class="loc-item current">
+          <span class="loc-flag">🇳🇿</span>
+          <span class="loc-dash"></span>
+          <span>NZ · 2026 – present</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section" id="quoteSection">
+  <span class="quote-number">01 — philosophy</span>
+  <div class="quote-container">
+    <span class="quote-line1">jack of</span>
+    <span class="quote-line2">all trades,</span>
+    <span class="quote-line3">master of none —</span>
+    <span class="quote-punch" data-text="STILL BETTER THAN MASTER OF ONE.">STILL BETTER THAN MASTER OF ONE.</span>
+    <span class="quote-em">the full quote they never finish.</span>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section class="interests-section" id="interests">
+  <p class="section-label">02 — what drives me</p>
+  <div class="interests-grid">
+
+    <div class="interest-item" data-popup="coding">
+      <span class="interest-icon">⌨</span>
+      <span class="interest-name">Coding</span>
+      <span class="interest-desc">Turning logic into things people touch. Clean code, deliberate architecture.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="gaming">
+      <span class="interest-icon">◈</span>
+      <span class="interest-name">Gaming</span>
+      <span class="interest-desc">Not just playing — appreciating design, mechanics, and what makes it feel alive.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="setup">
+      <span class="interest-icon">▣</span>
+      <span class="interest-name">Minimal Setups</span>
+      <span class="interest-desc">Everything in its place. Nothing without purpose. The beauty of restraint.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="drawing">
+      <span class="interest-icon">✎</span>
+      <span class="interest-name">Drawing</span>
+      <span class="interest-desc">Putting what's in the head onto the page. Sketches, concepts, ideas made visible.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="photography">
+      <span class="interest-icon">◉</span>
+      <span class="interest-name">Photography</span>
+      <span class="interest-desc">Freezing moments. Light, shadow, and the decisive fraction of a second.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="cars">
+      <span class="interest-icon">◧</span>
+      <span class="interest-name">Cars</span>
+      <span class="interest-desc">Engineering as sculpture. The intersection of mechanics and pure feeling.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="music">
+      <span class="interest-icon">♩</span>
+      <span class="interest-name">Music</span>
+      <span class="interest-desc">Sound as architecture. From deep basslines to silence between notes.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="tech">
+      <span class="interest-icon">⬡</span>
+      <span class="interest-name">Tech</span>
+      <span class="interest-desc">Obsessed with what's next. Hardware, software, and ideas that shift things.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+    <div class="interest-item" data-popup="camera">
+      <span class="interest-icon">⊙</span>
+      <span class="interest-name">Camera</span>
+      <span class="interest-desc">The glass and the sensor. Gear as craft, not just tools.</span>
+      <span class="interest-click-hint">click to open ↗</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section" id="marqueeSection">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item" data-word="BUILD">BUILD</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="EXPLORE">EXPLORE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="SHOOT">SHOOT</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="CODE">CODE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="CAPTURE">CAPTURE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="DRAW">DRAW</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="DRIVE">DRIVE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="LISTEN">LISTEN</span>
+    <span class="marquee-item filled">·</span>
+    <!-- duplicate for infinite loop -->
+    <span class="marquee-item" data-word="BUILD">BUILD</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="EXPLORE">EXPLORE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="SHOOT">SHOOT</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="CODE">CODE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="CAPTURE">CAPTURE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="DRAW">DRAW</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="DRIVE">DRIVE</span>
+    <span class="marquee-item filled">·</span>
+    <span class="marquee-item" data-word="LISTEN">LISTEN</span>
+    <span class="marquee-item filled">·</span>
+  </div>
+</div>
+
+<!-- BOTTOM -->
+<section class="bottom-section" id="about">
+  <div class="about-block">
+    <h2>About<br>Me</h2>
+    <p>
+      I live in the overlap between disciplines —<br>
+      between a terminal window and a camera viewfinder,<br>
+      between a perfectly tuned engine and a perfectly timed shutter.<br><br>
+      I build things, break things, and document all of it.<br>
+      Avishkar. Builder. Thinker. All of the above.
+    </p>
+  </div>
+  <div class="contact-block" id="contact">
+    <h2>Get<br>In Touch</h2>
+    <ul class="contact-links">
+      <li><a href="mailto:hello@avishkar01.com.np">Email <span>↗</span></a></li>
+      <li><a href="https://avishkar01.com.np" target="_blank">Website <span>↗</span></a></li>
+      <li><a href="https://github.com/Bepo01" target="_blank">GitHub <span>↗</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-left">© 2026 avishkar01</span>
+  <span class="footer-right">jack of all trades</span>
+</footer>
+
+
+<script src="main.js"></script>
+</body>
+</html>
