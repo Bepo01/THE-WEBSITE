@@ -247,54 +247,78 @@ const popups = {
       <div class="popup-section-title">Games I've Played</div>
       <div class="popup-section-desc">A record of time well spent. Every game has a memory attached to it — a place, a mood, a era.</div>
       <div class="game-list">
-        <div class="game-row">
+        <a href="https://playvalorant.com" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">Valorant</div>
             <span class="game-genre-tag">FPS · Tactical</span>
           </div>
           <div class="game-row-platform">PC</div>
           <div class="game-row-years">2023 – present</div>
-        </div>
-        <div class="game-row">
+          <span class="game-row-arrow">↗</span>
+        </a>
+         <a href="https://store.steampowered.com/app/460920/Steep/" target="_blank" rel="noopener" class="game-row">
+          <div>
+            <div class="game-row-name">Steep</div>
+            <span class="game-genre-tag">Single player · Action · Sports</span>
+          </div>
+          <div class="game-row-platform">PC</div>
+          <div class="game-row-years">Present</div>
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://overwatch.blizzard.com" target="_blank" rel="noopener" class="game-row">
+          <div>
+            <div class="game-row-name">Overwatch</div>
+            <span class="game-genre-tag">FPS · Hero Shooter</span>
+          </div>
+          <div class="game-row-platform">PC</div>
+          <div class="game-row-years">Present</div>
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://genshin.hoyoverse.com" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">Genshin Impact</div>
             <span class="game-genre-tag">RPG · Open World</span>
           </div>
           <div class="game-row-platform">PC / Mobile</div>
           <div class="game-row-years">2022 – 2024</div>
-        </div>
-        <div class="game-row">
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://www.rocketleague.com" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">Rocket League</div>
             <span class="game-genre-tag">Sports · Competitive</span>
           </div>
           <div class="game-row-platform">PC</div>
           <div class="game-row-years">~5–9 months</div>
-        </div>
-        <div class="game-row">
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://www.counter-strike.net" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">CS:GO</div>
             <span class="game-genre-tag">FPS · Tactical</span>
           </div>
           <div class="game-row-platform">PC</div>
           <div class="game-row-years">~2–3 months</div>
-        </div>
-        <div class="game-row">
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://ff.garena.com" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">Free Fire</div>
             <span class="game-genre-tag">Battle Royale · Mobile</span>
           </div>
           <div class="game-row-platform">Mobile</div>
           <div class="game-row-years">2018 – 2023</div>
-        </div>
-        <div class="game-row">
+          <span class="game-row-arrow">↗</span>
+        </a>
+        <a href="https://www.minecraft.net" target="_blank" rel="noopener" class="game-row">
           <div>
             <div class="game-row-name">Minecraft</div>
             <span class="game-genre-tag">Sandbox · Survival</span>
           </div>
           <div class="game-row-platform">PC / Mobile</div>
           <div class="game-row-years">2018 – 2022</div>
-        </div>
+          <span class="game-row-arrow">↗</span>
+        </a>
       </div>
     `
   },
@@ -312,18 +336,15 @@ const popups = {
     `
   },
 
-  drawing: {
+drawing: {
     title: 'drawings.sketchbook',
     html: `
       <div class="popup-section-title">Drawings</div>
       <div class="popup-section-desc">Sketches, concepts, and ideas made visible. Everything starts on paper.</div>
       <div class="media-grid">
-        ${Array.from({length: 9}, (_, i) => `
+        ${Array.from({length: 14}, (_, i) => `
           <div class="media-card">
-            <div class="media-card-placeholder">
-              <div class="media-card-placeholder-icon">✎</div>
-              <div class="media-card-placeholder-text">Add drawing<br>${i + 1}</div>
-            </div>
+            <img src="drawings/drawing${i + 1}.jpeg" alt="sketch ${i + 1}" class="media-img" loading="lazy" />
             <div class="media-card-label">sketch_${String(i+1).padStart(2,'0')}</div>
           </div>
         `).join('')}
@@ -351,50 +372,60 @@ const popups = {
   },
 
   cars: {
-    title: 'dream_garage.exe',
+    title: 'dream_garage.exe·',
     html: `
-      <div class="popup-section-title">Dream Garage</div>
+      <div class="popup-section-title">DREAM GARAGE · CARS I LOVE</div>
       <div class="popup-section-desc">Engineering as sculpture. The intersection of mechanics and pure feeling. These live rent-free in my head.</div>
       <div class="cars-grid">
         <div class="car-card">
+          <img class="car-img" src="cars/gtr-r35.jpg" alt="Nissan GT-R R35" loading="lazy" />
+          <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">01</span>
             <div class="car-name">Nissan GT-R R35</div>
             <span class="car-spec">VR38DETT · 565hp · AWD</span>
           </div>
-          <span class="car-arrow">↗</span>
+          <span class="car-arrow"></span>
         </div>
         <div class="car-card">
+          <img class="car-img" src="cars/supra-mk4.jpg" alt="Toyota Supra MK4" loading="lazy" />
+          <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">02</span>
             <div class="car-name">Toyota Supra MK4</div>
             <span class="car-spec">2JZ-GTE · 320hp · RWD</span>
           </div>
-          <span class="car-arrow">↗</span>
+          <span class="car-arrow"></span>
         </div>
         <div class="car-card">
+          <img class="car-img" src="cars/bmw-m4.jpg" alt="BMW M4" loading="lazy" />
+          <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">03</span>
             <div class="car-name">BMW M4</div>
             <span class="car-spec">S58 · 510hp · RWD</span>
           </div>
-          <span class="car-arrow">↗</span>
+          <span class="car-arrow"></span>
         </div>
         <div class="car-card">
+          <img class="car-img" src="cars/porsche-911.jpg" alt="Porsche 911" loading="lazy" />
+          <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">04</span>
             <div class="car-name">Porsche 911</div>
             <span class="car-spec">3.0 Flat-6 · 443hp · RWD</span>
           </div>
-          <span class="car-arrow">↗</span>
+          <span class="car-arrow"></span>
         </div>
         <div class="car-card car-card--wide">
+          <img class="car-img" src="cars/porsche-911-gt3rs.jpg" alt="Porsche 911 GT3 RS" loading="lazy" />
+          <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">05 — hero car</span>
             <div class="car-name">Porsche 911 GT3 RS</div>
             <span class="car-spec">4.0 Flat-6 NA · 518hp · Track Weapon · 0–100 in 3.2s</span>
           </div>
-          <span class="car-arrow">↗</span>
+          <span class="car-arrow"></span>
         </div>
       </div>
     `
@@ -420,39 +451,50 @@ const popups = {
   },
 
   tech: {
-    title: 'tech_owned.inventory',
-    html: `
-      <div class="popup-section-title">Tech I Own</div>
-      <div class="popup-section-desc">The hardware and software that powers everything. Obsessed with what's next.</div>
-      <div class="popup-grid">
-        <div class="popup-card">
-          <div class="popup-card-label">Computing</div>
-          <div class="popup-card-title">Add your PC<br>specs here</div>
-          <div class="popup-card-sub">CPU · GPU · RAM<br>Storage · Display</div>
-        </div>
-        <div class="popup-card">
-          <div class="popup-card-label">Mobile</div>
-          <div class="popup-card-title">Add your<br>phone here</div>
-          <div class="popup-card-sub">Model · Year<br>Accessories</div>
-        </div>
-        <div class="popup-card">
-          <div class="popup-card-label">Audio</div>
-          <div class="popup-card-title">Add your<br>headphones</div>
-          <div class="popup-card-sub">Model · Driver<br>Use case</div>
-        </div>
-        <div class="popup-card">
-          <div class="popup-card-label">Peripherals</div>
-          <div class="popup-card-title">Keyboard,<br>mouse, etc.</div>
-          <div class="popup-card-sub">Switches · DPI<br>Form factor</div>
-        </div>
-        <div class="popup-card" style="border-style:dashed;opacity:0.4">
-          <div class="popup-card-label">More</div>
-          <div class="popup-card-title">Add more<br>gear</div>
-          <div class="popup-card-sub">Your tech here</div>
-        </div>
-      </div>
-    `
-  },
+  title: 'Tech owned Inventory',
+  html: `
+    <div class="popup-section-title">Tech I Own</div>
+    <div class="popup-section-desc">The hardware that powers everything. Obsessed with what's next.</div>
+    <div class="popup-grid">
+
+      <a href="https://www.pbtech.co.nz/product/NBKHNB153088/HP-Victus-15-fb3088AX-NVIDIA-RTX-4050-Gaming-Lapto" target="_blank" rel="noopener" class="popup-card popup-card--link">
+        <div class="popup-card-label">Computing</div>
+        <div class="popup-card-title">HP Victus 15</div>
+        <div class="popup-card-sub">AMD Ryzen 5 7445HS · NVIDIA RTX 4050<br>16GB · 512GB · 1080p 144Hz</div>
+        <span class="popup-card-arrow">↗</span>
+      </a>
+
+      <a href="https://www.apple.com/nz/" target="_blank" rel="noopener" class="popup-card popup-card--link">
+        <div class="popup-card-label">Mobile</div>
+        <div class="popup-card-title">iPhone</div>
+        <div class="popup-card-sub">iPhone 11 · 2020</div>
+        <span class="popup-card-arrow">↗</span>
+      </a>
+
+      <a href="https://www.pbtech.co.nz/product/HSTEDI008000/Edifier-W800BT-Pro-Wireless-Over-Ear-Noise-Cancell" target="_blank" rel="noopener" class="popup-card popup-card--link">
+        <div class="popup-card-label">Audio</div>
+        <div class="popup-card-title">Edifier W800BT Pro</div>
+        <div class="popup-card-sub">Wireless</div>
+        <span class="popup-card-arrow">↗</span>
+      </a>
+
+      <a href="https://ajazzstore.com/" target="_blank" rel="noopener" class="popup-card popup-card--link">
+        <div class="popup-card-label">Peripherals</div>
+        <div class="popup-card-title">Keyboard</div>
+        <div class="popup-card-sub">NACODEX X AJAZZ <br>Blue Switches · 75%</div>
+        <span class="popup-card-arrow">↗</span>
+      </a>
+
+      <a href="https://ajazzbrand.com/products/ajazz-nj08-gaming-mouse-mouseall-round-type-wired-2-4g-wireless-bluetooth-type-c-charging" target="_blank" rel="noopener" class="popup-card popup-card--link">
+        <div class="popup-card-label">Peripherals</div>
+        <div class="popup-card-title">Mouse</div>
+        <div class="popup-card-sub">Nacodex NJ08 Tri-mode <br>DPI · 1200</div>
+        <span class="popup-card-arrow">↗</span>
+      </a>
+
+    </div>
+  `
+},
 
   camera: {
     title: 'camera.kit',
