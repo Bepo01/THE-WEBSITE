@@ -1,0 +1,285 @@
+/* =====================================================================
+   THEME — dark (default) + light
+   Load AFTER main.css / camera.css.
+   Dark = the site as-is. Light = everything inverted.
+   Toggle lives in the navbar (#themeToggle), state in <html data-theme>.
+   ===================================================================== */
+
+/* ---------- shared variables ---------- */
+:root {
+  --ring: rgba(232,228,223,0.35);
+
+  /* toggle */
+  --tt-bg: rgba(240,237,232,0.06);
+  --tt-bd: rgba(240,237,232,0.25);
+  --tt-thumb: #f0ede8;
+  --tt-icon: #080808;
+
+  /* camera page text helpers (were near-invisible dark-on-dark) */
+  --c-soft: rgba(232,228,223,0.5);
+  --c-faint: rgba(232,228,223,0.28);
+  --c-stroke: rgba(232,228,223,0.22);
+}
+
+:root[data-theme="light"] {
+  /* main page */
+  --black: #f0ede8;
+  --white: #080808;
+  --dim: #666;
+  --faint: #d9d4cb;
+  --accent: #1a1a1a;
+
+  /* camera page */
+  --bg: #f3f0eb;
+  --bg2: #e9e5df;
+  --bg3: #dfdad3;
+  --ink: #1c1a18;
+  --line: rgba(28,26,24,0.12);
+
+  --ring: rgba(8,8,8,0.4);
+  --tt-bg: rgba(8,8,8,0.05);
+  --tt-bd: rgba(8,8,8,0.25);
+  --tt-thumb: #080808;
+  --tt-icon: #f0ede8;
+
+  --c-soft: rgba(28,26,24,0.55);
+  --c-faint: rgba(28,26,24,0.3);
+  --c-stroke: rgba(28,26,24,0.25);
+
+  color-scheme: light;
+}
+
+/* smooth cross-fade while switching (class is added briefly by theme.js) */
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease, fill .4s ease !important;
+}
+
+/* ---------- navbar toggle ---------- */
+.nav-right { display: flex; align-items: center; gap: 40px; }
+
+.theme-toggle {
+  position: relative;
+  width: 52px; height: 26px;
+  padding: 0;
+  border-radius: 20px;
+  border: 1px solid var(--tt-bd);
+  background: var(--tt-bg);
+  cursor: none;
+  flex-shrink: 0;
+  transition: border-color .3s, background-color .3s;
+}
+.theme-toggle:hover { border-color: var(--dim); }
+.theme-toggle:focus-visible { outline: 1px solid var(--dim); outline-offset: 3px; }
+
+.tt-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--tt-thumb);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .4s cubic-bezier(0.23, 1, 0.32, 1), background-color .3s;
+}
+.tt-thumb svg {
+  position: absolute;
+  width: 12px; height: 12px;
+  stroke: var(--tt-icon);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity .3s, transform .4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.tt-moon { opacity: 1; transform: rotate(0deg); }
+.tt-sun  { opacity: 0; transform: rotate(-90deg); }
+
+:root[data-theme="light"] .theme-toggle .tt-thumb { transform: translateX(26px); }
+:root[data-theme="light"] .tt-moon { opacity: 0; transform: rotate(90deg); }
+:root[data-theme="light"] .tt-sun  { opacity: 1; transform: rotate(0deg); }
+
+@media (max-width: 768px) {
+  .nav-right { gap: 20px; }
+}
+
+/* =====================================================================
+   CAMERA PAGE — fixes that apply to both themes
+   ===================================================================== */
+.cursor { mix-blend-mode: difference; }
+.cursor-ring { border-color: var(--ring); }
+.hero-title span { -webkit-text-stroke-color: var(--c-stroke); }
+.strip-text { color: var(--c-soft); }
+.model-hint { color: var(--c-faint); }
+.ft { color: var(--c-faint); }
+
+/* =====================================================================
+   LIGHT THEME — hard-coded colours from main.css / camera.css
+   ===================================================================== */
+:root[data-theme="light"] .cursor { background: #fff; }
+:root[data-theme="light"] body::before { opacity: 0.35; }
+
+/* camera loader */
+:root[data-theme="light"] #loader:has(.ld-rule) { background: #f3f0eb; }
+/* main-page loader: background + shatter tiles must be the exact same colour */
+:root[data-theme="light"] #loader:not(:has(.ld-rule)) { background: var(--black); }
+:root[data-theme="light"] .shard { background: var(--black); }
+:root[data-theme="light"] .ld-rule { background: linear-gradient(to right, transparent, rgba(28,26,24,.25), transparent); }
+:root[data-theme="light"] .ld-name { -webkit-text-stroke-color: rgba(28,26,24,.2); }
+:root[data-theme="light"] .ld-fill { color: #1c1a18; }
+
+/* nav */
+:root[data-theme="light"] nav {
+  background: rgba(240,237,232,0.72);
+  border-bottom-color: rgba(8,8,8,0.08);
+}
+:root[data-theme="light"] .camera-page nav,
+:root[data-theme="light"] nav:has(.nav-back) { background: rgba(243,240,235,0.78); }
+
+/* hero (main page) */
+:root[data-theme="light"] .hero::after {
+  background-image:
+    linear-gradient(rgba(8,8,8,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,8,8,0.05) 1px, transparent 1px);
+}
+:root[data-theme="light"] .orb { background: radial-gradient(circle, rgba(0,0,0,0.05) 0%, transparent 70%); }
+:root[data-theme="light"] .hero-name span { -webkit-text-stroke-color: rgba(8,8,8,0.35); }
+:root[data-theme="light"] .status-dot { background: #12b45a; }
+:root[data-theme="light"] .loc-item { color: #8a8a8a; }
+:root[data-theme="light"] .loc-item.current { color: var(--dim); }
+:root[data-theme="light"] .loc-dash { background: #bbb; }
+:root[data-theme="light"] .loc-item.current .loc-dash { background: var(--dim); }
+
+/* quote */
+:root[data-theme="light"] .quote-section::before {
+  background: linear-gradient(to bottom, transparent, rgba(8,8,8,0.18), transparent);
+}
+:root[data-theme="light"] .quote-line1,
+:root[data-theme="light"] .quote-line2,
+:root[data-theme="light"] .quote-line3 { -webkit-text-stroke-color: rgba(8,8,8,0.3); }
+
+/* interests */
+:root[data-theme="light"] .interest-item:hover .interest-desc { color: #bdb8ae; }
+:root[data-theme="light"] .interest-click-hint { color: rgba(8,8,8,0.25); }
+:root[data-theme="light"] .interest-item:hover .interest-click-hint { color: rgba(240,237,232,0.55); }
+
+/* marquee */
+:root[data-theme="light"] .marquee-item { -webkit-text-stroke-color: rgba(8,8,8,0.22); }
+:root[data-theme="light"] .marquee-item.filled { -webkit-text-stroke: none; }
+:root[data-theme="light"] .marquee-item[data-word]:hover { -webkit-text-stroke: 1px transparent; }
+
+/* footer */
+:root[data-theme="light"] .footer-left,
+:root[data-theme="light"] .footer-right { color: #999; }
+
+/* main loader */
+:root[data-theme="light"] .loader-name { -webkit-text-stroke-color: rgba(8,8,8,0.2); }
+:root[data-theme="light"] .loader-name-fill { color: #080808; }
+:root[data-theme="light"] .loader-line { background: linear-gradient(to right, transparent, rgba(8,8,8,0.4), transparent); }
+:root[data-theme="light"] .shard { border-color: rgba(8,8,8,0.04); }
+:root[data-theme="light"] .loader-counter { color: #d5d0c7; }
+:root[data-theme="light"] #loader.loader-animate .loader-counter { color: #999; }
+:root[data-theme="light"] .loader-corner { color: #d5d0c7; }
+:root[data-theme="light"] #loader.loader-animate .loader-corner { color: #aaa; }
+
+/* ---------- popup window ---------- */
+:root[data-theme="light"] .popup-overlay { background: rgba(240,237,232,0.82); }
+:root[data-theme="light"] .popup-window {
+  background: #f6f3ee;
+  border-color: #d5d0c7;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.03);
+}
+:root[data-theme="light"] .popup-titlebar { background: #ebe7df; border-bottom-color: #d8d3c9; }
+:root[data-theme="light"] .titlebar-title { color: #8a8a8a; }
+:root[data-theme="light"] .popup-body { scrollbar-color: #cfc9be transparent; }
+:root[data-theme="light"] .popup-body::-webkit-scrollbar-thumb { background: #cfc9be; }
+
+:root[data-theme="light"] .popup-card { background: #ebe7df; border-color: #d8d3c9; }
+:root[data-theme="light"] .popup-card:hover { background: #e3ded5; border-color: #b9b3a8; }
+:root[data-theme="light"] .popup-card-label { color: #888; }
+:root[data-theme="light"] .popup-card-arrow { color: #b5afa4; }
+:root[data-theme="light"] .popup-card--link:hover .popup-card-arrow { color: var(--dim); }
+
+/* code cards */
+:root[data-theme="light"] .code-card { background: #fbfaf7; border-color: #d8d3c9; }
+:root[data-theme="light"] .code-card:hover { border-color: #b9b3a8; }
+:root[data-theme="light"] .code-card-header { background: #ebe7df; border-bottom-color: #ddd8ce; }
+:root[data-theme="light"] .code-card-name { color: #777; }
+:root[data-theme="light"] .code-card-body { color: #555; }
+:root[data-theme="light"] .code-card-body .kw  { color: #7c3aed; }
+:root[data-theme="light"] .code-card-body .fn  { color: #1d4ed8; }
+:root[data-theme="light"] .code-card-body .str { color: #15803d; }
+:root[data-theme="light"] .code-card-body .cm  { color: #8a9aa3; }
+:root[data-theme="light"] .code-card-body .num { color: #c2410c; }
+:root[data-theme="light"] .code-card-footer { border-top-color: #e2ddd3; }
+:root[data-theme="light"] .code-tag { border-color: #d0cabf; color: #777; }
+
+/* games */
+:root[data-theme="light"] .game-list { background: #d8d3c9; }
+:root[data-theme="light"] .game-row { background: #f6f3ee; }
+:root[data-theme="light"] .game-row:hover { background: #ebe7df; }
+:root[data-theme="light"] .game-row-platform,
+:root[data-theme="light"] .game-genre-tag { color: #888; }
+:root[data-theme="light"] .game-row-arrow { color: #b5afa4; }
+:root[data-theme="light"] .game-row:hover .game-row-arrow { color: var(--dim); }
+
+/* media grid (drawings / photos / music) */
+:root[data-theme="light"] .media-card { background: #ebe7df; border-color: #d8d3c9; }
+:root[data-theme="light"] .media-card:hover { border-color: #b9b3a8; }
+:root[data-theme="light"] .media-card-placeholder { color: #b5afa4; }
+:root[data-theme="light"] .media-card:hover .media-card-placeholder { color: #8a8a8a; }
+:root[data-theme="light"] .media-card-label {
+  background: linear-gradient(to top, rgba(240,237,232,0.95), transparent);
+}
+:root[data-theme="light"] .lightbox { background: rgba(240,237,232,0.9); }
+
+/* cars — photos keep their dark overlay, so text over them stays light */
+:root[data-theme="light"] .car-name,
+:root[data-theme="light"] .car-card:hover .car-name { color: #f0ede8; }
+:root[data-theme="light"] .car-index,
+:root[data-theme="light"] .car-card:hover .car-index { color: rgba(240,237,232,0.65); }
+:root[data-theme="light"] .car-spec,
+:root[data-theme="light"] .car-card:hover .car-spec { color: rgba(240,237,232,0.78); }
+:root[data-theme="light"] .car-arrow { color: rgba(240,237,232,0.5); }
+:root[data-theme="light"] .car-card:hover .car-arrow { color: #f0ede8; }
+
+/* setup WIP */
+:root[data-theme="light"] .setup-wip-text { -webkit-text-stroke-color: rgba(8,8,8,0.25); }
+:root[data-theme="light"] .setup-wip-sub { color: #888; }
+:root[data-theme="light"] .setup-wip > div:last-child { color: #aaa !important; }
+:root[data-theme="light"] .setup-progress { background: #d8d3c9; }
+
+/* camera kit card */
+:root[data-theme="light"] .cam-kit-card { background: #f6f3ee; border-color: #d8d3c9; }
+:root[data-theme="light"] .cam-kit-card:hover { border-color: #b9b3a8; }
+:root[data-theme="light"] .cam-kit-spec { color: #888; }
+:root[data-theme="light"] .cam-kit-hint { color: #b5afa4; }
+:root[data-theme="light"] .cam-kit-card:hover .cam-kit-hint { color: var(--dim); }
+
+/* =====================================================================
+   LIGHT THEME — camera page extras
+   ===================================================================== */
+:root[data-theme="light"] .model-frame {
+  box-shadow: 0 24px 80px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.05);
+}
+:root[data-theme="light"] .hero::before {
+  background-image: radial-gradient(circle, rgba(28,26,24,.08) 1px, transparent 1px);
+}
+
+/* =====================================================================
+   THEME SWITCH ANIMATION (View Transitions ripple, driven by theme.js)
+   ===================================================================== */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+/* no extra transitions while the ripple runs, so the snapshots stay crisp */
+html.theme-vt *,
+html.theme-vt *::before,
+html.theme-vt *::after {
+  transition: none !important;
+}

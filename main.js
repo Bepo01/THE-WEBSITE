@@ -344,7 +344,7 @@ drawing: {
       <div class="media-grid">
         ${Array.from({length: 14}, (_, i) => `
           <div class="media-card">
-            <img src="drawings/drawing${i + 1}.jpeg" alt="sketch ${i + 1}" class="media-img" loading="eager" />
+            <img src="drawings/drawing${i + 1}.jpeg" alt="sketch ${i + 1}" class="media-img" loading="lazy" />
             <div class="media-card-label">sketch_${String(i+1).padStart(2,'0')}</div>
           </div>
         `).join('')}
@@ -378,7 +378,7 @@ drawing: {
       <div class="popup-section-desc">Engineering as sculpture. The intersection of mechanics and pure feeling. These live rent-free in my head.</div>
       <div class="cars-grid">
         <div class="car-card">
-          <img class="car-img" src="cars/gtr-r35.jpg" alt="Nissan GT-R R35" loading="eager" />
+          <img class="car-img" src="cars/gtr-r35.jpg" alt="Nissan GT-R R35" loading="lazy" />
           <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">01</span>
@@ -388,7 +388,7 @@ drawing: {
           <span class="car-arrow"></span>
         </div>
         <div class="car-card">
-          <img class="car-img" src="cars/supra-mk4.jpg" alt="Toyota Supra MK4" loading="eager" />
+          <img class="car-img" src="cars/supra-mk4.jpg" alt="Toyota Supra MK4" loading="lazy" />
           <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">02</span>
@@ -398,7 +398,7 @@ drawing: {
           <span class="car-arrow"></span>
         </div>
         <div class="car-card">
-          <img class="car-img" src="cars/bmw-m4.jpg" alt="BMW M4" loading="eager" />
+          <img class="car-img" src="cars/bmw-m4.jpg" alt="BMW M4" loading="lazy" />
           <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">03</span>
@@ -408,7 +408,7 @@ drawing: {
           <span class="car-arrow"></span>
         </div>
         <div class="car-card">
-          <img class="car-img" src="cars/porsche-911.jpg" alt="Porsche 911" loading="eager" />
+          <img class="car-img" src="cars/porsche-911.jpg" alt="Porsche 911" loading="lazy" />
           <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">04</span>
@@ -418,7 +418,7 @@ drawing: {
           <span class="car-arrow"></span>
         </div>
         <div class="car-card car-card--wide">
-          <img class="car-img" src="cars/porsche-911-gt3rs.jpg" alt="Porsche 911 GT3 RS" loading="eager" />
+          <img class="car-img" src="cars/porsche-911-gt3rs.jpg" alt="Porsche 911 GT3 RS" loading="lazy" />
           <div class="car-overlay"></div>
           <div class="car-card-inner">
             <span class="car-index">05 — hero car</span>
